@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "752606860207",
+    "project_id": "flavorfolio-6157e",
+    "storage_bucket": "flavorfolio-6157e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752606860207:android:7d882bb3d9f57770f6555a",
+        "android_client_info": {
+          "package_name": "com.flavorfolio.flavor_folio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752606860207-r8t5g31ki5t871dms1i96j1oq1n9oss6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg0HCXxmPESoLXiwUy4dJ_3u4ZQMNyhZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752606860207-r8t5g31ki5t871dms1i96j1oq1n9oss6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "752606860207-3fvdalt84dujddc0bhsufo5ujn8hs7d8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flavorfolio.flavorFolio"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
