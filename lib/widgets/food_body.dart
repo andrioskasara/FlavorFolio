@@ -35,9 +35,19 @@ class _FoodBodyState extends State<FoodBody> {
     pageController.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            children: [BigText(text: "Recommended")],
+          ),
+        ),
+        SizedBox(
+          height: Dimensions.height10,
+        ),
         Container(
           height: Dimensions.pageView,
           child: PageView.builder(
@@ -57,8 +67,90 @@ class _FoodBodyState extends State<FoodBody> {
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
           ),
-        )
-        // todo: continue implementation from here
+        ),
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            children: [BigText(text: "Top recipes")],
+          ),
+        ),
+        ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20,
+                    right: Dimensions.width20,
+                    bottom: Dimensions.height10),
+                child: Row(
+                  children: [
+                    Container(
+                      height: Dimensions.listViewImageSize,
+                      width: Dimensions.listViewImageSize,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius20),
+                          color: Colors.white30,
+                          image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/images/d-14.jpg"))),
+                    ),
+                    Expanded(
+                        child: Container(
+                      height: Dimensions.listViewTextContainer,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(Dimensions.radius20),
+                          bottomRight: Radius.circular(Dimensions.radius20),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: Dimensions.width10,
+                            right: Dimensions.width10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BigText(text: "Lemon pie"),
+                            SizedBox(
+                              height: Dimensions.height10,
+                            ),
+                            SmallText(text: "With fresh lemons"),
+                            SizedBox(
+                              height: Dimensions.height10,
+                            ),
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    iconColor: AppColors.iconColor1,
+                                    text: "Easy"),
+                                IconAndTextWidget(
+                                    icon: Icons.location_on,
+                                    iconColor: AppColors.mainColor,
+                                    text: "0.7km"),
+                                IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    iconColor: AppColors.iconColor2,
+                                    text: "12min"),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ))
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
@@ -145,18 +237,17 @@ class _FoodBodyState extends State<FoodBody> {
                                 (index) => const Icon(Icons.star,
                                     color: AppColors.mainColor, size: 15)),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimensions.width10,
                           ),
                           SmallText(text: "4.8"),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimensions.width30,
                           ),
-                          SmallText(text: "34"),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: Dimensions.width30,
                           ),
-                          SmallText(text: "comments"),
+                          SmallText(text: "34 reviews"),
                         ],
                       ),
                       SizedBox(

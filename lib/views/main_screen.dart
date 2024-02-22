@@ -57,7 +57,10 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
           ),
-          FoodBody(),
+          Expanded(
+              child: SingleChildScrollView(
+            child: FoodBody(),
+          )),
         ],
       ),
     );
