@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
       body: Column(
         children: [
           _buildHeader(context),
-          const Expanded(child: FoodBody()), // Adjust this as necessary
+          const Expanded(child: FoodBody()),
         ],
       ),
     );

@@ -22,12 +22,10 @@ class FilterResultScreen extends StatelessWidget {
           return Center(child: Text('Error: ${snapshot.error}'));
         }
 
-        // Convert the snapshot to a list of Recipe objects
         List<Recipe> recipes = snapshot.data!.docs
             .map((doc) => Recipe.fromJson(doc.data() as Map<String, dynamic>))
             .toList();
 
-        // Filter recipes based on the selected criteria
         List<Recipe> filteredRecipes = recipes.where((recipe) {
           return (category == 'All' || recipe.category == category) &&
               recipe.rating >= rating;

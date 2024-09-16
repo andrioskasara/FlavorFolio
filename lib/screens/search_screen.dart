@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../providers/recipe_provider.dart';
 import '../widgets/recipe_list_item.dart';
@@ -51,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     return RecipeListItem(
                       recipe: recipeProvider.recipes[index],
                       onTap: () {
-                        // Navigate to recipe detail page
+                        Get.toNamed('/recipe_detail', arguments: recipeProvider.recipes[index]);
                       },
                     );
                   },

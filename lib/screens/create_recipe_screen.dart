@@ -23,7 +23,7 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
   void _submitRecipe() async {
     if (_formKey.currentState?.validate() ?? false) {
       final newRecipe = Recipe(
-        id: '', // Let Firestore generate the ID
+        id: '',
         name: name,
         description: description,
         category: category,
@@ -36,10 +36,10 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
 
       try {
         await RecipeService().createRecipe(newRecipe);
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Recipe created successfully')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Recipe created successfully')));
         Navigator.pop(context);
       } catch (error) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Failed to create recipe')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Failed to create recipe')));
       }
     }
   }
@@ -69,8 +69,8 @@ class _CreateRecipeScreenState extends State<CreateRecipeScreen> {
                 onChanged: (val) => imageUrl = val,
               ),
               ElevatedButton(
-                child: const Text('Save Recipe'),
                 onPressed: _submitRecipe,
+                child: const Text('Save Recipe'),
               ),
             ],
           ),
